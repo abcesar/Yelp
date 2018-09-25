@@ -25,6 +25,12 @@ class BusinessCell: UITableViewCell {
     
     @IBOutlet weak var catagoriesLabel: UILabel!
     
+    var business: Business! {
+        didSet {
+            nameLabel.text = business.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
