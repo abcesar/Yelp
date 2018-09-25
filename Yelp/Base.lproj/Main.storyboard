@@ -25,9 +25,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="krl-qP-3ua">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="2xI-yr-O5N" id="0PU-7A-HGp"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="141" id="Q91-zv-PnN" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="141"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q91-zv-PnN" id="q2z-36-ZPU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
@@ -120,10 +128,20 @@
                     </view>
                     <navigationItem key="navigationItem" title="Yelp" id="nza-oz-3v7"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="Mbj-Wg-DKm" id="QPD-Kh-CE6"/>
                         <outlet property="tableView" destination="CLt-C5-dd1" id="xnB-TQ-VBq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgb-4b-F1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Mbj-Wg-DKm">
+                    <connections>
+                        <outlet property="delegate" destination="2xI-yr-O5N" id="Ffv-A4-Y6d"/>
+                        <outlet property="searchBar" destination="krl-qP-3ua" id="0uv-6B-Pom"/>
+                        <outlet property="searchContentsController" destination="2xI-yr-O5N" id="Cie-y6-jQs"/>
+                        <outlet property="searchResultsDataSource" destination="2xI-yr-O5N" id="7sp-OD-5CZ"/>
+                        <outlet property="searchResultsDelegate" destination="2xI-yr-O5N" id="eus-06-Kkp"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2727.1999999999998" y="357.57121439280365"/>
         </scene>
