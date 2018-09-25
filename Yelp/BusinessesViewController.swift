@@ -19,10 +19,13 @@ class BusinessesViewController: UIViewController,UITableViewDataSource,UITableVi
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
                 self.businesses = businesses
+                self.tableView.reloadData()
                 if let businesses = businesses {
                     for business in businesses {
                         print(business.name!)
